@@ -8,11 +8,11 @@ class pwm
 public:
 	pwm();
 	~pwm();
-	void begin();
+	void begin(char );
 	void start(int );
 	void stop();
 	void restart();
 private:
-	char _buffer[50];
+	char _buffer[4];
 	int _iterator;
 };

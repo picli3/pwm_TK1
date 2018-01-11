@@ -1,15 +1,19 @@
 #include "pwm.h"
 
 pwm::pwm(){
-	_buffer[50]=0;
+	_buffer[4]=0;
 	_iterator=0;
 }
 pwm::~pwm(){}
 
-void pwm::begin(){
+void pwm::begin(char index){
 
-	system("echo 1 > /sys/class/pwm/pwmchip0/unexport \n");
- 	system("echo 1 > /sys/class/pwm/pwmchip0/export \n");
+  	sprintf(_buffer,"echo %c > /sys/class/pwm/pwmchip0/unexport \n",index);
+	system(_buffer);
+
+	sprintf(_buffer,"echo %c > /sys/class/pwm/pwmchip0/export \n",index);
+	system(_buffer);
+
 	system("echo 1000000 > /sys/class/pwm/pwmchip0/pwm1/period \n");
 	system("echo 0 > /sys/class/pwm/pwmchip0/pwm1/duty_cycle \n");
 	system("echo 1 > /sys/class/pwm/pwmchip0/pwm1/enable \n");
