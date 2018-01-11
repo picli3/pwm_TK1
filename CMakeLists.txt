@@ -1,4 +1,4 @@
 cmake_minimum_required(VERSION 2.8)
-project( main )
+project( pwm )
 
-add_executable( main main.cpp pwm.h pwm.cpp)
+add_executable( pwm main.cpp pwm.h pwm.cpp)
