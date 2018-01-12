@@ -18,10 +18,10 @@ void pwm::begin(char index){
 	system(_buffer);
 
 	sprintf(_buffer,"echo 0 > /sys/class/pwm/pwmchip0/pwm%c/duty_cycle \n",index);
-	system(_buffer)
+	system(_buffer);
 
 	sprintf(_buffer,"echo 1 > /sys/class/pwm/pwmchip0/pwm%c/enable \n",index);
-	system(_buffer)
+	system(_buffer);
 
 }
 
