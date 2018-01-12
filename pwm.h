@@ -9,7 +9,7 @@ public:
 	pwm();
 	~pwm();
 	void begin(char );
-	void start(int );
+	void start(char,int );
 	void stop();
 	void restart();
 private:

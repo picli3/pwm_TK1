@@ -16,7 +16,7 @@ int main(int argc, char **argv)
 	//printf("%c\n",argv[2][0] );
 
 	iluminacion.begin(argv[2][0]);
-	iluminacion.start(value);
+	iluminacion.start(argv[2][0],value);
 	
 
 

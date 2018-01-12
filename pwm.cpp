@@ -25,9 +25,10 @@ void pwm::begin(char index){
 
 }
 
-void pwm::start(int i){
+void pwm::start(char index,int i){
 	    i+=100000;
-  		sprintf(_buffer,"echo %d > /sys/class/pwm/pwmchip0/pwm1/duty_cycle \n",i);
+
+  		sprintf(_buffer,"echo %d > /sys/class/pwm/pwmchip0/pwm%c/duty_cycle \n",i,index);
 		system(_buffer);
 }
 
