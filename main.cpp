@@ -9,7 +9,7 @@ int main(int argc, char const *argv[])
 	value = strtol(argv[1],&pEnd,10);
 	pwm iluminacion;
 
-	iluminacion.begin(argv[2]);
+	iluminacion.begin((char)argv[2]);
 	iluminacion.start(value);
 	
 
