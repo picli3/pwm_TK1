@@ -7,7 +7,7 @@ pwm::pwm(){
 pwm::~pwm(){}
 
 void pwm::begin(char index){
-	
+
 	_buffer[10]=0;
   	sprintf(_buffer,"echo %c > /sys/class/pwm/pwmchip0/unexport \n",index);
 	system(_buffer);
@@ -27,7 +27,7 @@ void pwm::begin(char index){
 }
 
 void pwm::start(char index,int i){
-	    i+=100000;
+	    i=100000*i;
 
   		sprintf(_buffer,"echo %d > /sys/class/pwm/pwmchip0/pwm%c/duty_cycle \n",i,index);
 		system(_buffer);
