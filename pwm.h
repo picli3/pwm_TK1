@@ -10,7 +10,7 @@ public:
 	~pwm();
 	void begin(char );
 	void start(char,int );
-	void stop();
+	void stop(char );
 	void restart();
 private:
 	char _buffer[10];

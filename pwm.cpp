@@ -33,8 +33,10 @@ void pwm::start(char index,int i){
 		system(_buffer);
 }
 
-void pwm::stop(){
-	system("echo 0 > /sys/class/pwm/pwmchip0/pwm1/enable \n");
+void pwm::stop(char index){
+
+	sprintf(_buffer,"echo 0 > /sys/class/pwm/pwmchip0/pwm%c/enable \n",index);
+	system(_buffer);
 }
 
 void pwm::restart(){

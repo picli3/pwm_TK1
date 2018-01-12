@@ -19,7 +19,10 @@ int main(int argc, char **argv)
 	
 	iluminacion.start(argv[2][0],value);
 	
-
+	if (argv[3][0]=='p')
+	{
+		iluminacion.stop(argv[2][0]);
+	}
 
 	return 0;
 }
