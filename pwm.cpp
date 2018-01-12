@@ -1,7 +1,7 @@
 #include "pwm.h"
 
 pwm::pwm(){
-	_buffer[4]=0;
+	_buffer[10]=0;
 	_iterator=0;
 }
 pwm::~pwm(){}

@@ -13,6 +13,6 @@ public:
 	void stop();
 	void restart();
 private:
-	char _buffer[4];
+	char _buffer[10];
 	int _iterator;
 };
