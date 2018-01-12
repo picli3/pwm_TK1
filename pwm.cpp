@@ -6,6 +6,7 @@ pwm::pwm(){
 }
 pwm::~pwm(){}
 
+//Inicializa el PWM con 1s de periodo
 void pwm::begin(char index){
 
 	_buffer[10]=0;
@@ -23,22 +24,22 @@ void pwm::begin(char index){
 
 	sprintf(_buffer,"echo 1 > /sys/class/pwm/pwmchip0/pwm%c/enable \n",index);
 	system(_buffer);
-
 }
 
+//dicar a que led se le cambiara el ciclo de trabajo
 void pwm::start(char index,int i){
 	    i=100000*i;
-
   		sprintf(_buffer,"echo %d > /sys/class/pwm/pwmchip0/pwm%c/duty_cycle \n",i,index);
 		system(_buffer);
 }
-
+// Apaga el led al cual se le indique
 void pwm::stop(char index){
 
 	sprintf(_buffer,"echo 0 > /sys/class/pwm/pwmchip0/pwm%c/enable \n",index);
 	system(_buffer);
 }
 
+//estaura los valores de fabrica
 void pwm::restart(){
 	system("echo 1 > /sys/class/pwm/pwmchip0/unexport \n");
 }

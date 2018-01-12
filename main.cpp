@@ -1,13 +1,7 @@
-
 #include "pwm.h"
-
-
 
 int main(int argc, char **argv)
 {
-
-
-	
 	int value;
 	char * pEnd;
 	value = strtol(argv[1],&pEnd,10);
