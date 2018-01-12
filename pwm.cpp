@@ -10,7 +10,7 @@ void pwm::begin(char index){
 
   	sprintf(_buffer,"echo %c > /sys/class/pwm/pwmchip0/unexport \n",index);
 	system(_buffer);
-
+	sleep(1);
 	sprintf(_buffer,"echo %c > /sys/class/pwm/pwmchip0/export \n",index);
 	system(_buffer);
 
