@@ -7,7 +7,8 @@ pwm::pwm(){
 pwm::~pwm(){}
 
 void pwm::begin(char index){
-
+	
+	_buffer[10]=0;
   	sprintf(_buffer,"echo %c > /sys/class/pwm/pwmchip0/unexport \n",index);
 	system(_buffer);
 	sleep(1);
