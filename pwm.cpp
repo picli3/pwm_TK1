@@ -14,9 +14,14 @@ void pwm::begin(char index){
 	sprintf(_buffer,"echo %c > /sys/class/pwm/pwmchip0/export \n",index);
 	system(_buffer);
 
-	system("echo 1000000 > /sys/class/pwm/pwmchip0/pwm1/period \n");
-	system("echo 0 > /sys/class/pwm/pwmchip0/pwm1/duty_cycle \n");
-	system("echo 1 > /sys/class/pwm/pwmchip0/pwm1/enable \n");
+	sprintf(_buffer,"echo 1000000 > /sys/class/pwm/pwmchip0/pwm%c/period \n",index);
+	system(_buffer);
+
+	sprintf(_buffer,"echo 0 > /sys/class/pwm/pwmchip0/pwm%c/duty_cycle \n",index);
+	system(_buffer)
+
+	sprintf(_buffer,"echo 1 > /sys/class/pwm/pwmchip0/pwm%c/enable \n",index);
+	system(_buffer)
 
 }
 
