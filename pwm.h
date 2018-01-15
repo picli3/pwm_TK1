@@ -1,4 +1,3 @@
-/* sprintf example */
 #include <stdio.h>
 #include <stdlib.h> //Librería necesaria para la función system().
 #include <unistd.h>
