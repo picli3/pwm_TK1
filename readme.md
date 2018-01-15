@@ -5,7 +5,7 @@ una pequeña clase que controla el PWM de procesador apalis TK1 con las posibili
 
 La clase funciona de forma muy sensilla e intiutiva, debe ejecutarse como **root** para que pueda funcionar.
 
-##Uso
+## Uso
 
 ~~~ 
 #include "pwm.h"
@@ -30,13 +30,13 @@ int main(int argc, char **argv)
 }
 ~~~
 
-##ejecucion
+## ejecucion
 
-###Inicia el pwm 1 con Ducty_cicle de 10%
+### Inicia el pwm 1 con Ducty_cicle de 10%
 ~~~
 ./pwm 1 1
 ~~~
-###Detiene el pwm 1
+### Detiene el pwm 1
 ~~~
 ./pwm 1 1 p
 ~~~
